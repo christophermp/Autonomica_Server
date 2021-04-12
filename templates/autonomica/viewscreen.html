@@ -9,6 +9,7 @@
             <h2>Edit {{ screen.title }}</h2>
         </div>
     </div>
+    <button type="button" class="btn btn-warning" onclick="$('#complete').click()">Re-Read Macros</button>
     <div class="row justify-content-center mt-5">
         <div class="col-md-5">
             {% if error %}
@@ -37,6 +38,8 @@
             </form>
         </div>
     </div>
+    <br>
+
     {% if todo.datecompleted is None %}
         <form style='display: none;' method="POST" action="{% url 'completetodo' screen.id %}">
             {% csrf_token %}
@@ -59,7 +62,7 @@
                     <div class="dropdown-menu">
                         {% for macro in macros %}
                             {% if macro.category == 'a' %}
-                                <a class="dropdown-item" href="#">{{ macro.name }}</a>
+                                <a class="dropdown-item" onclick="runMacro('{{macro.device.ip}}', '{{ macro.device.port }}','{{ macro.command }}')">{{ macro.name }}</a>
                             {% endif %}
                         {% endfor %}
                         <div class="dropdown-divider"></div>

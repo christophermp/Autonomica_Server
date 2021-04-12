@@ -1,6 +1,9 @@
 from django.contrib import admin
 from .models import Todo, Screen, Macro, Device
 
+
+admin.site.site_header = 'Autonomica Admin'
+
 class TodoAdmin(admin.ModelAdmin):
     readonly_fields = ('created',)
 

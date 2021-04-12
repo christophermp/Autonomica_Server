@@ -14,7 +14,7 @@ class ScreenForm(ModelForm):
 class MacroForm(ModelForm):
     class Meta:
         model = Macro
-        fields = ['name', 'command', 'ip', 'termination']
+        fields = ['name', 'command', 'termination']
 
 class DeviceForm(ModelForm):
     class Meta:

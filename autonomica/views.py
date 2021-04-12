@@ -11,7 +11,6 @@ from django.views import generic
 from . import models
 from . import forms
 
-
 def home(request):
     screens = Screen.objects.filter(enabled=True)
     return render(request, 'autonomica/home.html', {'screens': screens})

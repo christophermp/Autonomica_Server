@@ -1,28 +1,29 @@
 body {
-  background-color: rgb(40, 39, 39);
+    background-color: rgb(40, 39, 39);
 }
+
 p {
-  color: #eeeeee;
+    color: #eeeeee;
 }
 
 h1 {
-  color: #eeeeee;
+    color: #eeeeee;
 }
 
 h2 {
-  color: #eeeeee;
+    color: #eeeeee;
 }
 
 h5 {
-  color: #eeeeee;
+    color: #eeeeee;
 }
 
 h6 {
-  color: #eeeeee;
+    color: #eeeeee;
 }
 
 label {
-  color: #eeeeee;
+    color: #eeeeee;
 }
 
 thead th {
@@ -30,6 +31,11 @@ thead th {
 }
 
 tbody td {
-
     color: white;
+}
+
+hr {
+    height: 1px;
+    background-color: #ccc;
+    border: none;
 }
