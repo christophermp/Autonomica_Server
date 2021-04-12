@@ -1,0 +1,37 @@
+{% extends "autonomica/base.html" %}
+{% load static %}
+{% block content %}
+    
+<p>
+    <a class="btn btn-light" href="{% url 'Autonomica_Macro_list' %}">
+    Macro Listing
+    </a>
+</p>
+    
+<form method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{form.errors}}
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="command">command: </label>
+  <input class="form-control col-sm-10" id="command" type="text" name="command" value="{{ object.command }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="category">category: </label>
+  <input class="form-control col-sm-10" id="category" type="text" name="category" value="{{ object.category }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="ip">ip: </label>
+  <input class="form-control col-sm-10" id="ip" type="text" name="ip" value="{{ object.ip }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="termination">termination: </label>
+  <input class="form-control col-sm-10" id="termination" type="text" name="termination" value="{{ object.termination }}">
+  </div>
+  <div class="form-group row">
+  <label class="col-sm-2 col-form-label" for="name">name: </label>
+  <input class="form-control col-sm-10" id="name" type="text" name="name" value="{{ object.name }}">
+  </div>
+  <input type="submit" value="Save" class="btn btn-primary">
+</form>
+
+{% endblock %}

@@ -1,0 +1,7 @@
+{% extends "autonomica/base.html" %}
+{% block content %}
+{% for object in object_list %}
+  <div class="m-2"><a href="{{object.get_absolute_url}}">{{object}}</a></div>
+{% endfor %}
+<div><a class="btn btn-primary" href="{% url 'Autonomica_Macro_create' %}">Create a new Macro</a></div>
+{% endblock %}

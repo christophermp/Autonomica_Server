@@ -1,0 +1,35 @@
+body {
+  background-color: rgb(40, 39, 39);
+}
+p {
+  color: #eeeeee;
+}
+
+h1 {
+  color: #eeeeee;
+}
+
+h2 {
+  color: #eeeeee;
+}
+
+h5 {
+  color: #eeeeee;
+}
+
+h6 {
+  color: #eeeeee;
+}
+
+label {
+  color: #eeeeee;
+}
+
+thead th {
+    color: white;
+}
+
+tbody td {
+
+    color: white;
+}

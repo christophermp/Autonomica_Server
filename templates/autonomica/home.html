@@ -1,0 +1,41 @@
+{% extends "autonomica/base.html" %}
+
+{% block content %}
+    <br>
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-7 text-center">
+        <div>
+        <h1>Autonomica</h1>
+            <p>Select a screen to manage you're macros or start a fullscreen <b><i>session</i></b>  </p>
+            <a role="button" class="btn btn-primary btn-lg" href="{% url 'signupuser' %}">Start</a>
+        </div>
+        <br>
+        <br>
+            {% for screen in screens %}
+                {% if forloop.counter0|divisibleby:3 %}
+                    <div class="row"> {% endif %}
+            <div class="col-md-4">
+                <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                    <a href=""><img class="responsive opacity" src="" alt=""></a>
+                    <div class="card-content">
+                        <h3>📽</h3>
+                        <p class="date-field">{{ screen.title }} / {{ screen.location }}</p>
+                        <h2 class="article-title"><a class="link-article"
+                                                     href="{{ post.get_absolute_url }}">{{ post.title }}</a></h2>
+                        <div class="content">
+                            {{ post.content|safe|truncatewords:35 }}
+                        </div>
+                        <div class="button-wrapper"><a href="{% url 'viewscreen' screen.id %}">
+                            <button class="btn btn-danger">Manage Screen</button>
+                        </a></div>
+                        <br>
+                    </div>
+                </div>
+            </div>
+            {% if forloop.counter|divisibleby:3 or forloop.last %}</div><br>{% endif %}
+            {% endfor %}
+
+        </div>
+    </div>
+
+{% endblock %}
