@@ -32,6 +32,7 @@ urlpatterns = [
     path('completed/', views.completedtodos, name='completedtodos'),
     path('autonomica/<int:todo_pk>', views.viewtodo, name='viewtodo'),
     path('screen/<int:screen_pk>', views.viewscreen, name='viewscreen'),
+    path('screen/fullscreen/<int:screen_pk>', views.fullscreen, name='fullscreen'),
     path('autonomica/<int:todo_pk>/complete', views.completetodo, name='completetodo'),
     path('autonomica/<int:todo_pk>/delete', views.deletetodo, name='deletetodo'),
 ]

@@ -1,17 +1,16 @@
-{% extends "autonomica/base.html" %}
+
+
+
+{% extends "autonomica/basefullscreen.html" %}
 
 {% block content %}
+
     <div class="row justify-content-center mt-5">
         <div class="col-md-5">
-            <h2>Edit {{ screen.title }}</h2>
+            <h2><div class="spinner-grow text-success-xs text-success" role="status"></div> - {{ screen.title }}</h2>
         </div>
     </div>
-    <div class="row justify-content-center mt-5">
-    <div class="col-md-5">
-            <button type="button" class="btn btn-warning" onclick="$('#complete').click()">Re-Read Macros</button>
-            <button type="button" class="btn btn-danger" onclick="location.href='{% url 'fullscreen' screen.id %}'" type=" button"> Start Fullscreen</button>
-        </div>
-    </div>
+    {% csrf_token %}
     <div class="row justify-content-center mt-5">
         <div class="col-md-5">
             {% if error %}
@@ -19,29 +18,8 @@
                     {{ error }}
                 </div>
             {% endif %}
-            <form method="POST">
-                {% csrf_token %}
-                <div class="form-group">
-                    <label for="title">Title</label>
-                    <input type="text" name="title" class="form-control" id="title" value="{{ screen.title }}" required>
-                </div>
-                <div class="form-group">
-                    <label for="location">Location</label>
-                    <input name="location" rows="5" class="form-control" id="location" value="{{ screen.location }}">
-                </div>
-                <div class="form-group form-check">
-                    <input type="checkbox" name="important" class="form-check-input" id="important"
-                           {% if screen.enabled %}checked{% endif %}>
-                    <label class="form-check-label" for="important">Enabled</label>
-                </div>
-                <button type="submit" class="btn btn-primary">Save</button>
-                <button type="button" class="btn btn-success" onclick="$('#complete').click()">Complete</button>
-                <button type="button" class="btn btn-danger" onclick="$('#delete').click()">Delete</button>
-            </form>
         </div>
     </div>
-    </form>
-
     <br>
 
     {% if todo.datecompleted is None %}
@@ -66,12 +44,13 @@
                     <div class="dropdown-menu">
                         {% for macro in macros %}
                             {% if macro.category == 'a' %}
-                                <a class="dropdown-item"
-                                   onclick="runMacro('{{ macro.device.ip }}', '{{ macro.device.port }}','{{ macro.command }}')">{{ macro.name }}</a>
+                                <a class="dropdown-item" onclick="runMacro('{{macro.device.ip}}', '{{ macro.device.port }}','{{ macro.command }}')">{{ macro.name }}</a>
                             {% endif %}
                         {% endfor %}
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="#">Separated link</a>
+
+
                     </div>
                 </div>
                 <div class="btn-group">
@@ -155,6 +134,7 @@
                 </tbody>
             </table>
         </div>
+
     </div>
 
 

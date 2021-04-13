@@ -32,6 +32,22 @@ def viewscreen(request, screen_pk):
                           {'autonomica': screen, 'form': screen, 'error': 'Bad data'})
 
 
+def fullscreen(request, screen_pk):
+    screen = get_object_or_404(Screen, pk=screen_pk)
+    macro = Macro.objects.filter(screen_id=screen_pk).order_by('-name')
+    device = Device.objects.filter(screen_id=screen_pk).order_by('-name')
+    if request.method == 'GET':
+        formS = ScreenForm(instance=screen)
+        return render(request, 'autonomica/fullscreen.html', {'screen': screen, 'form': formS, 'macros': macro, 'devices': device})
+    else:
+        try:
+            form = ScreenForm(request.POST, instance=screen)
+            form.save()
+            return redirect('currenttodos')
+        except ValueError:
+            return render(request, 'autonomica/home.html',
+                          {'autonomica': screen, 'form': screen, 'error': 'Bad data'})
+
 
 # Create your views here.
 def signupuser(request):
