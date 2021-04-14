@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="171a962b-c51f-413f-8a41-76885d24f573" name="Default Changelist" comment="Update">
-      <change afterPath="$PROJECT_DIR$/autonomica/tcp.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/autonomica/basefullscreen.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/autonomica/fullscreen.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Autonomica_Server/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Autonomica_Server/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Autonomica_Server/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Autonomica_Server/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/autonomica/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/autonomica/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/autonomica/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/autonomica/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/autonomica/viewscreen.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/autonomica/viewscreen.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +122,8 @@
       <updated>1618142648148</updated>
       <workItem from="1618142677762" duration="19751000" />
       <workItem from="1618217784891" duration="18182000" />
-      <workItem from="1618320104102" duration="10250000" />
+      <workItem from="1618320104102" duration="10871000" />
+      <workItem from="1618417678552" duration="59000" />
     </task>
     <task id="LOCAL−00001" summary="Initial">
       <created>1618222195181</created>
@@ -175,7 +167,13 @@
       <option name="presentableId" value="LOCAL−00007" />
       <updated>1618320268609</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL−00008" summary="Update">
+      <created>1618340779812</created>
+      <option name="number" value="LOCAL−00008" />
+      <option name="presentableId" value="LOCAL−00008" />
+      <updated>1618340779812</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
