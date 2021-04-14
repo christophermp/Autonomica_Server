@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="171a962b-c51f-413f-8a41-76885d24f573" name="Default Changelist" comment="Update">
+      <change afterPath="$PROJECT_DIR$/autonomica/parser.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/autonomica/fullscreen.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/autonomica/fullscreen.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,8 +19,8 @@
       <list>
         <option value="CSS File" />
         <option value="JavaScript File" />
-        <option value="Python Script" />
         <option value="HTML File" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
@@ -52,7 +54,29 @@
       <recent name="C:\Users\meldr\PycharmProjects\Autonomica_Server\autonomica" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.tcp">
+  <component name="RunManager" selected="Python.parser">
+    <configuration name="parser" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Autonomica_Server" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/autonomica" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/autonomica/parser.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="scripts" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Autonomica_Server" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -98,12 +122,14 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Django Server.Autonomica_Server" />
       <item itemvalue="Python.scripts" />
       <item itemvalue="Python.tcp" />
+      <item itemvalue="Django Server.Autonomica_Server" />
+      <item itemvalue="Python.parser" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.parser" />
         <item itemvalue="Python.tcp" />
         <item itemvalue="Python.scripts" />
       </list>
@@ -123,7 +149,7 @@
       <workItem from="1618142677762" duration="19751000" />
       <workItem from="1618217784891" duration="18182000" />
       <workItem from="1618320104102" duration="10871000" />
-      <workItem from="1618417678552" duration="59000" />
+      <workItem from="1618417678552" duration="4666000" />
     </task>
     <task id="LOCAL−00001" summary="Initial">
       <created>1618222195181</created>
@@ -173,7 +199,13 @@
       <option name="presentableId" value="LOCAL−00008" />
       <updated>1618340779812</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL−00009" summary="Update">
+      <created>1618417761921</created>
+      <option name="number" value="LOCAL−00009" />
+      <option name="presentableId" value="LOCAL−00009" />
+      <updated>1618417761921</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -198,6 +230,7 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Autonomica_Server$tcp.coverage" NAME="tcp Coverage Results" MODIFIED="1618339483451" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/autonomica" />
+    <SUITE FILE_PATH="coverage/Autonomica_Server$parser.coverage" NAME="parser Coverage Results" MODIFIED="1618424717443" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/autonomica" />
     <SUITE FILE_PATH="coverage/Autonomica_Server$scripts.coverage" NAME="scripts Coverage Results" MODIFIED="1618259681989" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/autonomica" />
   </component>
 </project>
