@@ -1,5 +1,5 @@
 from django.forms import ModelForm
-from .models import Todo, Screen, Macro, Device
+from .models import Todo, Screen, Macro, Device, Task
 
 class TodoForm(ModelForm):
     class Meta:
@@ -20,3 +20,8 @@ class DeviceForm(ModelForm):
     class Meta:
         model = Device
         fields = ['name', 'ip', 'port']
+
+class TaskForm(ModelForm):
+    class Meta:
+        model = Task
+        fields = ['task_name', 'version', 'modified', 'macro_name', 'device', 'type', 'message']

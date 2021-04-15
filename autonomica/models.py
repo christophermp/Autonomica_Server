@@ -3,7 +3,6 @@ from django.contrib.auth.models import User
 
 
 # Create your models here.
-
 class Todo(models.Model):
     title = models.CharField(max_length=100)
     memo = models.CharField(max_length=100, blank=True)
@@ -63,3 +62,18 @@ class Macro(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Task(models.Model):
+    screen = models.ForeignKey(Screen, null=True, on_delete=models.CASCADE)
+    task_name = models.CharField(max_length=100)
+    version = models.CharField(max_length=100)
+    modified = models.CharField(max_length=100)
+    macro_name = models.CharField(max_length=100)
+    device = models.CharField(max_length=100)
+    type = models.CharField(max_length=100)
+    message = models.CharField(max_length=100)
+
+
+    def __str__(self):
+        return self.task_name

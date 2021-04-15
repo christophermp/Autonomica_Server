@@ -4,12 +4,13 @@ from django.contrib.auth.models import User
 from django.db import IntegrityError
 from django.contrib.auth import login, logout, authenticate
 from .forms import TodoForm, ScreenForm, MacroForm, DeviceForm
-from .models import Todo, Screen, Macro, Device
+from .models import Todo, Screen, Macro, Device, Task
 from django.utils import timezone
 from django.contrib.auth.decorators import login_required
 from django.views import generic
 from . import models
 from . import forms
+from .parser import taskParser
 
 def home(request):
     screens = Screen.objects.filter(enabled=True)
@@ -19,6 +20,8 @@ def viewscreen(request, screen_pk):
     screen = get_object_or_404(Screen, pk=screen_pk)
     macro = Macro.objects.filter(screen_id=screen_pk).order_by('-name')
     device = Device.objects.filter(screen_id=screen_pk).order_by('-name')
+    print('Screen id: ', screen_pk)
+    #taskParser(screen_pk)
     if request.method == 'GET':
         formS = ScreenForm(instance=screen)
         return render(request, 'autonomica/viewscreen.html', {'screen': screen, 'form': formS, 'macros': macro, 'devices': device})

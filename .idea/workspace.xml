@@ -2,8 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="171a962b-c51f-413f-8a41-76885d24f573" name="Default Changelist" comment="Update">
+      <change afterPath="$PROJECT_DIR$/autonomica/migrations/0017_task.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a96ab297-e0fb-4ed3-a89a-2c9fed3c2b49.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/a96ab297-e0fb-4ed3-a89a-2c9fed3c2b49.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomica/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/autonomica/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomica/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/autonomica/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomica/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/autonomica/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/autonomica/parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/autonomica/parser.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomica/tcp.py" beforeDir="false" afterPath="$PROJECT_DIR$/autonomica/tcp.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/autonomica/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/autonomica/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +61,7 @@
       <recent name="C:\Users\meldr\PycharmProjects\Autonomica_Server\autonomica" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.parser">
+  <component name="RunManager" selected="Python.tcp">
     <configuration name="parser" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Autonomica_Server" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -128,8 +136,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.parser" />
         <item itemvalue="Python.tcp" />
+        <item itemvalue="Python.parser" />
         <item itemvalue="Python.scripts" />
       </list>
     </recent_temporary>
@@ -149,7 +157,7 @@
       <workItem from="1618217784891" duration="18182000" />
       <workItem from="1618320104102" duration="10871000" />
       <workItem from="1618417678552" duration="7351000" />
-      <workItem from="1618490730486" duration="1769000" />
+      <workItem from="1618490730486" duration="9861000" />
     </task>
     <task id="LOCAL−00001" summary="Initial">
       <created>1618222195181</created>
@@ -217,7 +225,13 @@
       <option name="presentableId" value="LOCAL−00011" />
       <updated>1618433705335</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL−00012" summary="Update">
+      <created>1618492543038</created>
+      <option name="number" value="LOCAL−00012" />
+      <option name="presentableId" value="LOCAL−00012" />
+      <updated>1618492543038</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -241,8 +255,8 @@
     <option name="LAST_COMMIT_MESSAGE" value="Update" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Autonomica_Server$tcp.coverage" NAME="tcp Coverage Results" MODIFIED="1618339483451" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/autonomica" />
-    <SUITE FILE_PATH="coverage/Autonomica_Server$parser.coverage" NAME="parser Coverage Results" MODIFIED="1618492495123" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/autonomica" />
+    <SUITE FILE_PATH="coverage/Autonomica_Server$tcp.coverage" NAME="tcp Coverage Results" MODIFIED="1618507981135" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/autonomica" />
+    <SUITE FILE_PATH="coverage/Autonomica_Server$parser.coverage" NAME="parser Coverage Results" MODIFIED="1618495791217" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/autonomica" />
     <SUITE FILE_PATH="coverage/Autonomica_Server$scripts.coverage" NAME="scripts Coverage Results" MODIFIED="1618259681989" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/autonomica" />
   </component>
 </project>
