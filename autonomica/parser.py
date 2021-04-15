@@ -1,26 +1,37 @@
 import requests
 import json
-url2 = 'http://10.0.0.111:8090/getconfiguration'
 
-content = requests.get(url2).content
+url = 'http://10.0.0.111:8090/getconfiguration'
 
-j = json.loads(content)
 
-request_url = 'http://10.0.0.111:8090/getconfiguration'
-r = requests.get(request_url).json()
+read_content = json.loads(requests.get(url).text)
 
-devices = []
+#with open('./json.json') as access_json:
+# read_content = json.load(access_json)
+#print(type(read_content))
+#print(read_content)
+workspaceAccess = read_content['workspaces'][0]['tasks']
+workspaceName = read_content['workspaces'][0]['name']
+workspaceVersion = read_content['workspaces'][0]['version']
+workspaceEnabled = read_content['workspaces'][0]['enabled']
+workspaceLastModified = read_content['workspaces'][0]['lastModifiedTime']
+#print(type(workspaceAccess))
+print(workspaceName)
+print(workspaceEnabled)
+print(workspaceVersion)
+print(workspaceLastModified)
 
-for i in r["workspaces"][0]["tasks"]:
-    print(i["name"], i['devicesReferenced'])
-    devices.append(i['devicesReferenced'])
-    for key, value in i.items():
-        print(key, '->', value)
+#print(workspaceAccess[4]['name'], workspaceAccess[4]['devicesReferenced'][0]['type'])
 
-print(f'Devices {devices}')
-
-for i in devices:
-    print(i[:])
-
-for item in devices:
-    print(item)
+for questionData in workspaceAccess:
+    #print(questionData)
+    repliesData = questionData['devicesReferenced']
+    repliesName = questionData['name']
+    #print(repliesData)
+    #print(repliesName)
+    for data in repliesData:
+        #print('Task Name: ', questionData['name'])
+        name = data['name']
+        message = data['message']
+        type = data['type']
+        print('Name and info: ', questionData['name'], name, message, type)
