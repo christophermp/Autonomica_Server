@@ -5,9 +5,9 @@
 
 {% block content %}
 
-    <div class="row justify-content-center mt-5">
+    <div class="row justify-content-left mt-5">
         <div class="col-md-5">
-            <h2><div class="spinner-grow text-success text-success" role="status"></div> - {{ screen.title }}</h2>
+
         </div>
     </div>
     {% csrf_token %}
@@ -20,122 +20,55 @@
             {% endif %}
         </div>
     </div>
-    <br>
-
-    {% if todo.datecompleted is None %}
-        <form style='display: none;' method="POST" action="{% url 'completetodo' screen.id %}">
-            {% csrf_token %}
-            <button id="complete" type="submit">Complete</button>
-        </form>
-    {% endif %}
-    <form style='display: none;' method="POST" action="{% url 'deletetodo' screen.id %}">
-        {% csrf_token %}
-        <button id="delete" type="submit">Delete</button>
-    </form>
-    <div class="row justify-content-center mt-5">
-        <div class="col-md-5">
-            <br>
-            <div>
-                <div class="btn-group">
-                    <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                        Audiotorium
-                    </button>
-                    <div class="dropdown-menu">
-                        {% for macro in macros %}
-                            {% if macro.category == 'a' %}
-                                <a class="dropdown-item" onclick="runMacro('{{macro.device.ip}}', '{{ macro.device.port }}','{{ macro.command }}')">{{ macro.name }}</a>
-                            {% endif %}
-                        {% endfor %}
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Separated link</a>
-
-
-                    </div>
-                </div>
-                <div class="btn-group">
-                    <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                        Projector
-                    </button>
-                    <div class="dropdown-menu">
-                        {% for macro in macros %}
-                            {% if macro.category == 'p' %}
-                                <a class="dropdown-item" href="#">{{ macro.name }}</a>
-                            {% endif %}
-                        {% endfor %}
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Separated link</a>
-                    </div>
-                </div>
-                <div class="btn-group">
-                    <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                        Sound
-                    </button>
-                    <div class="dropdown-menu">
-                        {% for macro in macros %}
-                            {% if macro.category == 's' %}
-                                <a class="dropdown-item" href="#">{{ macro.name }}</a>
-                            {% endif %}
-                        {% endfor %}
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Separated link</a>
-                    </div>
-                </div>
-                <div class="btn-group">
-                    <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">
-                        Player
-                    </button>
-                    <div class="dropdown-menu">
-                        {% for macro in macros %}
-                            {% if macro.category == 'm' %}
-                                <a class="dropdown-item" href="#">{{ macro.name }}</a>
-                            {% endif %}
-                        {% endfor %}
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Separated link</a>
-                    </div>
-                </div>
-            </div>
-            <br>
-            <br>
-            <div>
-                <h5>All Macros - DEBUG SECTION</h5>
-                <h6>A-Audiotorium | P-Projector | S- Sound | M-Player </h6>
-                <div>
-
-                    {% for macro in macros %}
-                        <button type="button" class="btn btn-danger mb-1"
-                                onclick="null">{{ macro.name }}-{{ macro.category }}</button>
-                    {% endfor %}
-                </div>
-            </div>
-            <br>
-
-            <h5>Linked Devices</h5>
-            <table class="table table-sm">
-                <thead>
-                <tr>
-                    <th scope="col">Name</th>
-                    <th scope="col">Ip</th>
-                    <th scope="col">Port</th>
-                </tr>
-                </thead>
-                <tbody>
-                {% for device in devices %}
-                    <tr>
-                        <td>{{ device.name }}</td>
-                        <td>{{ device.ip }}</td>
-                        <td>{{ device.port }}</td>
-                    </tr>
-                {% endfor %}
-                </tbody>
-            </table>
+    <div class="card text-white bg-dark mb-3">
+        <h5 class="card-header">Audiotorium</h5>
+        <div class="card-body">
+            {% for macro in macros %}
+                {% if macro.category == 'a' %}
+                    <a class="btn btn-{{ macro.colors }}"
+                       onclick="runMacro('{{ macro.device.ip }}', '{{ macro.device.port }}','{{ macro.command }}')">{{ macro.name }}</a>
+                {% endif %}
+            {% endfor %}
         </div>
-
     </div>
+
+
+    <div class="card text-white bg-dark mb-3">
+        <h5 class="card-header">Projector</h5>
+        <div class="card-body">
+            {% for macro in macros %}
+                {% if macro.category == 'p' %}
+                    <a class="btn btn-{{ macro.colors }}"
+                       onclick="runMacro('{{ macro.device.ip }}', '{{ macro.device.port }}','{{ macro.command }}')">{{ macro.name }}</a>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+
+
+    <div class="card text-white bg-dark mb-3">
+        <h5 class="card-header">Sound</h5>
+        <div class="card-body">
+            {% for macro in macros %}
+                {% if macro.category == 's' %}
+                    <a class="btn btn-{{ macro.colors }}"
+                       onclick="runMacro('{{ macro.device.ip }}', '{{ macro.device.port }}','{{ macro.command }}')">{{ macro.name }}</a>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="card text-white bg-dark mb-3">
+            <h5 class="card-header">Player</h5>
+            <div class="card-body">
+                {% for macro in macros %}
+                    {% if macro.category == 'm' %}
+                        <a class="btn btn-{{ macro.colors }}"
+                           onclick="runMacro('{{ macro.device.ip }}', '{{ macro.device.port }}','{{ macro.command }}')">{{ macro.name }}</a>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
 
 
 {% endblock %}

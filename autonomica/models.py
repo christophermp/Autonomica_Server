@@ -34,7 +34,6 @@ class Device(models.Model):
     cinema = models.BooleanField(default=False, blank=True, help_text="If Jnior is Cinema Application installed?")
     tasker = models.BooleanField(default=False, blank=True, help_text="If Jnior is Tasker Application installed?")
 
-
     def __str__(self):
         return self.name
 
@@ -51,14 +50,24 @@ class Macro(models.Model):
         ('c', 'Cinema Application'),
         ('t', 'Tasker Application'),
     )
+
+    CATEGORY_COLOR_BUTTON = (
+        ('danger', 'Red'),
+        ('success', 'Green'),
+        ('info', 'Blue'),
+        ('warning', 'Yellow'),
+
+    )
     screen = models.ForeignKey(Screen, on_delete=models.CASCADE, help_text="Related to screen.")
     device = models.ForeignKey(Device, on_delete=models.CASCADE, null=True, help_text="Device category.")
     name = models.CharField(max_length=100, help_text="Public name.")
     command = models.CharField(max_length=100, help_text="System command.")
     termination = models.CharField(max_length=100, blank=True, help_text="Termination String if any.")
+    colors = models.CharField(max_length=20, choices=CATEGORY_COLOR_BUTTON, default='danger',
+                              help_text="If you want a other button color you can select it here.")
     category = models.CharField(max_length=100, choices=CATEGORY, default='p', )
-    jnior = models.CharField(max_length=100, choices=CATEGORY_JNIOR, default='n', help_text="Use if macro is amed for Tasker or Cinema Application." )
-
+    jnior = models.CharField(max_length=100, choices=CATEGORY_JNIOR, default='n',
+                             help_text="Use if macro is amed for Tasker or Cinema Application.")
 
     def __str__(self):
         return self.name
@@ -73,7 +82,6 @@ class Task(models.Model):
     device = models.CharField(max_length=100)
     type = models.CharField(max_length=100)
     message = models.CharField(max_length=100)
-
 
     def __str__(self):
         return self.task_name

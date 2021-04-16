@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(40, 39, 39);
+    background-color: rgb(41, 43, 44);
 }
 
 p {
@@ -38,4 +38,11 @@ hr {
     height: 1px;
     background-color: #ccc;
     border: none;
+}
+a {
+    line-height: 1em;
+    display: inline-block;
+    text-decoration: none;
+    padding: 2px;
+    margin: 2px;
 }

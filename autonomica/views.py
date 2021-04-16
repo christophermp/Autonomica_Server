@@ -95,7 +95,7 @@ def loginuser(request):
                           {'form': AuthenticationForm(), 'error': 'Username and PW did not match '})
         else:
             login(request, user)
-            return redirect('currenttodos')
+            return redirect('home')
 
 
 @login_required

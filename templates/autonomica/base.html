@@ -31,13 +31,7 @@
                 <ul class="navbar-nav mr-auto">
 
                     <li class="nav-item {{ current }}">
-                        <a class="nav-link" href="{% url 'currenttodos' %}">Current</a>
-                    </li>
-                    <li class="nav-item {{ completed }}">
-                        <a class="nav-link" href="{% url 'completedtodos' %}">Completed</a>
-                    </li>
-                    <li class="nav-item {{ create }}">
-                        <a class="nav-link" href="{% url 'createtodo' %}">Create</a>
+                        <a class="nav-link" href="{% url 'home' %}">LINK EMPTY FOR DEVELOPMENT</a>
                     </li>
 
                 </ul>
@@ -51,17 +45,18 @@
                             <button id="signOutBtn" type="submit">Logout</button>
                         </form>
                     </li>
-                {% else %}
+
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'signupuser' %}">Sign Up</a>
+                        <a class="nav-link" href="http://10.0.0.111/tasker">Tasker</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'admin:index' %}">Admin</a>
+                    </li>
+                {% else %}
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'loginuser' %}">Login</a>
                     </li>
                 {% endif %}
-                <li class="nav-item">
-                    <a class="nav-link" href="http://10.0.0.111/tasker">Tasker</a>
-                </li>
 
             </ul>
         </div>
