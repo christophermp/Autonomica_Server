@@ -4,8 +4,7 @@ from .models import Task
 
 def taskParser(screen_pk):
 
-
-    url = 'http://10.0.0.111:8090/getconfiguration'
+    url = 'http://10.0.0.111:8090/getTaskDevices'
     # connection = sqlite3.connect("../db.sqlite3")
     # cursor = connection.cursor()
 
@@ -33,12 +32,16 @@ def taskParser(screen_pk):
         repliesData = questionData['devicesReferenced']
         repliesName = questionData['name']
         #print(repliesData)
-        #print(repliesName)
+        print(repliesName)
         for data in repliesData:
-            #print('Task Name: ', questionData['name'])
-            name = data['name']
-            message = data['message']
+            print('Task Name: ', questionData['name'])
             type = data['type']
+            name = data['name']
+            if type == 'PulseRelay':
+                message = data['channel']
+            else:
+                message = data['message']
+
             print('Name and info: ', questionData['name'], name, message, type)
             task = Task(screen_id=screen_pk, task_name = questionData['name'],
                            version = workspaceVersion, modified = workspaceLastModified, macro_name = questionData['name'],

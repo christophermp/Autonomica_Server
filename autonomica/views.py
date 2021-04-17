@@ -12,19 +12,23 @@ from . import models
 from . import forms
 from .parser import taskParser
 
+
+
 def home(request):
     screens = Screen.objects.filter(enabled=True)
     return render(request, 'autonomica/home.html', {'screens': screens})
+
 
 def viewscreen(request, screen_pk):
     screen = get_object_or_404(Screen, pk=screen_pk)
     macro = Macro.objects.filter(screen_id=screen_pk).order_by('-name')
     device = Device.objects.filter(screen_id=screen_pk).order_by('-name')
     print('Screen id: ', screen_pk)
-    #taskParser(screen_pk)
+    # taskParser(screen_pk)
     if request.method == 'GET':
         formS = ScreenForm(instance=screen)
-        return render(request, 'autonomica/viewscreen.html', {'screen': screen, 'form': formS, 'macros': macro, 'devices': device})
+        return render(request, 'autonomica/viewscreen.html',
+                      {'screen': screen, 'form': formS, 'macros': macro, 'devices': device})
     else:
         try:
             form = ScreenForm(request.POST, instance=screen)
@@ -41,7 +45,8 @@ def fullscreen(request, screen_pk):
     device = Device.objects.filter(screen_id=screen_pk).order_by('-name')
     if request.method == 'GET':
         formS = ScreenForm(instance=screen)
-        return render(request, 'autonomica/fullscreen.html', {'screen': screen, 'form': formS, 'macros': macro, 'devices': device})
+        return render(request, 'autonomica/fullscreen.html',
+                      {'screen': screen, 'form': formS, 'macros': macro, 'devices': device})
     else:
         try:
             form = ScreenForm(request.POST, instance=screen)
@@ -153,10 +158,8 @@ def deletetodo(request, todo_pk):
         return redirect('currenttodos')
 
 
-
 @login_required
 def help(request):
     helps = Help.objects.filter(user=request.user)
     print(helps)
     return render(request, 'autonomica/help.html', {'helps': helps})
-

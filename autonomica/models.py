@@ -85,13 +85,24 @@ class Macro(models.Model):
 
 
 class Task(models.Model):
+
+    CATEGORY_COLOR_BUTTON = (
+        ('danger', 'Red'),
+        ('success', 'Green'),
+        ('info', 'Blue'),
+        ('warning', 'Yellow'),
+
+    )
+
     screen = models.ForeignKey(Screen, null=True, on_delete=models.CASCADE)
     task_name = models.CharField(max_length=100)
+    colors = models.CharField(max_length=20, choices=CATEGORY_COLOR_BUTTON, default='danger',
+                              help_text="If you want a other button color you can select it here.")
     version = models.CharField(max_length=100)
     modified = models.CharField(max_length=100)
     macro_name = models.CharField(max_length=100)
     device = models.CharField(max_length=100)
-    type = models.CharField(max_length=100)
+    type = models.CharField(max_length=100, help_text="If PulseRelay Message section will be an INT representing Rout JNIOR")
     message = models.CharField(max_length=100)
 
     def __str__(self):
