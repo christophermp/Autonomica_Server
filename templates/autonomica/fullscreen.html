@@ -59,16 +59,16 @@
     </div>
 
     <div class="card text-white bg-dark mb-3">
-            <h5 class="card-header">Player</h5>
-            <div class="card-body">
-                {% for macro in macros %}
-                    {% if macro.category == 'm' %}
-                        <a class="btn btn-{{ macro.colors }}"
-                           onclick="runMacro('{{ macro.device.ip }}', '{{ macro.device.port }}','{{ macro.command }}')">{{ macro.name }}</a>
-                    {% endif %}
-                {% endfor %}
-            </div>
+        <h5 class="card-header">Player</h5>
+        <div class="card-body">
+            {% for macro in macros %}
+                {% if macro.category == 'm' %}
+                    <a class="btn btn-{{ macro.colors }}"
+                       onclick="runMacro('{{ macro.device.ip }}', '{{ macro.device.port }}','{{ macro.command }}')">{{ macro.name }}</a>
+                {% endif %}
+            {% endfor %}
         </div>
+    </div>
 
 
 {% endblock %}
