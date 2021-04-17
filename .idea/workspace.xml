@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="171a962b-c51f-413f-8a41-76885d24f573" name="Default Changelist" comment="Update">
+    <list default="true" id="171a962b-c51f-413f-8a41-76885d24f573" name="Default Changelist" comment="UI Edit">
+      <change afterPath="$PROJECT_DIR$/autonomica/static/todo/css/offline-theme-dark-indicator.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Autonomica_Server/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Autonomica_Server/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Autonomica_Server/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Autonomica_Server/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/autonomica/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/autonomica/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/autonomica/basefullscreen.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/autonomica/basefullscreen.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -47,11 +52,11 @@
       <recent name="C:\Users\meldr\PycharmProjects\Autonomica_Server\templates" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\meldr\PycharmProjects\Autonomica_Server\autonomica\static\todo\css" />
       <recent name="C:\Users\meldr\PycharmProjects\Autonomica_Server\autonomica\static\todo\scss" />
       <recent name="C:\Users\meldr\PycharmProjects\Autonomica_Server\autonomica\static\todo" />
       <recent name="C:\Users\meldr\PycharmProjects\Autonomica_Server\autonomica\static\todo\js" />
       <recent name="C:\Users\meldr\PycharmProjects\Autonomica_Server\autonomica\static\todo\fonts" />
-      <recent name="C:\Users\meldr\PycharmProjects\Autonomica_Server\autonomica\static\todo\css" />
     </key>
   </component>
   <component name="RunManager" selected="Python.tcp">
@@ -152,7 +157,7 @@
       <workItem from="1618417678552" duration="7351000" />
       <workItem from="1618490730486" duration="11699000" />
       <workItem from="1618605047304" duration="6267000" />
-      <workItem from="1618653071595" duration="14276000" />
+      <workItem from="1618653071595" duration="16684000" />
     </task>
     <task id="LOCAL−00001" summary="Initial">
       <created>1618222195181</created>
@@ -268,7 +273,13 @@
       <option name="presentableId" value="LOCAL−00019" />
       <updated>1618670451168</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL−00020" summary="UI Edit">
+      <created>1618670553697</created>
+      <option name="number" value="LOCAL−00020" />
+      <option name="presentableId" value="LOCAL−00020" />
+      <updated>1618670553697</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -289,7 +300,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial" />
     <MESSAGE value="Update" />
-    <option name="LAST_COMMIT_MESSAGE" value="Update" />
+    <MESSAGE value="UI Edit" />
+    <option name="LAST_COMMIT_MESSAGE" value="UI Edit" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Autonomica_Server$tcp.coverage" NAME="tcp Coverage Results" MODIFIED="1618507981135" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/autonomica" />

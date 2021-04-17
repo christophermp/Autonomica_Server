@@ -6,6 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="{% static 'todo/js/scripts.js' %}"></script>
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="{% static 'todo/css/bootstrap.min.css' %}">
     <script src="{% static 'todo/js/offline.min.js' %}"></script>
@@ -61,7 +62,7 @@
         req.send();
     }
 
-    setInterval(run, 3000);
+    setInterval(run, 10000);
 </script>
 
 </body>
