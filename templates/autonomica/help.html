@@ -1,0 +1,36 @@
+{% extends "autonomica/base.html" %}
+
+{% block content %}
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-10">
+            {% if helps %}
+                <h1>{{ helps.count }} Help Article{{ helps.count|pluralize }}</h1>
+            {% else %}
+                <h1>Current Help</h1>
+            {% endif %}
+        </div>
+    </div>
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-10">
+            {% if helps %}
+                <div class="list-group">
+                    {% for help in helps %}
+                        <div class="card text-white bg-dark mb-3">
+                            <h5 class="card-header">{{ help.title }}</h5>
+                            <div class="card-body">
+                                <h5 class="card-title">{{ help.description}}</h5>
+                                <p class="card-text">{{ help.info }}</p>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            {% else %}
+                <div class="text-center">
+                    <h2>No Text available.</h2>
+                    <br>
+                    <h6>Help articles are created by Admin.</h6>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

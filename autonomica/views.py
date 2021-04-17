@@ -3,8 +3,8 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 from django.db import IntegrityError
 from django.contrib.auth import login, logout, authenticate
-from .forms import TodoForm, ScreenForm, MacroForm, DeviceForm
-from .models import Todo, Screen, Macro, Device, Task
+from .forms import TodoForm, ScreenForm, MacroForm, DeviceForm, HelpForm
+from .models import Todo, Screen, Macro, Device, Task, Help
 from django.utils import timezone
 from django.contrib.auth.decorators import login_required
 from django.views import generic
@@ -153,4 +153,10 @@ def deletetodo(request, todo_pk):
         return redirect('currenttodos')
 
 
+
+@login_required
+def help(request):
+    helps = Help.objects.filter(user=request.user)
+    print(helps)
+    return render(request, 'autonomica/help.html', {'helps': helps})
 

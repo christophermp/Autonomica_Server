@@ -15,6 +15,17 @@ class Todo(models.Model):
         return self.title
 
 
+class Help(models.Model):
+    title = models.CharField(max_length=100)
+    description = models.CharField(max_length=100, blank=True)
+    info = models.TextField()
+    created = models.DateTimeField(auto_now_add=True)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.title
+
+
 class Screen(models.Model):
     title = models.CharField(max_length=100)
     location = models.CharField(max_length=100, blank=True)

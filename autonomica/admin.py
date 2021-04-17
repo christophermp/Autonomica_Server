@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Todo, Screen, Macro, Device, Task
+from .models import Todo, Screen, Macro, Device, Task, Help
 
 
 admin.site.site_header = 'Autonomica Admin'
@@ -14,6 +14,13 @@ admin.site.register(Todo, TodoAdmin)
 class ScreenAdmin(admin.ModelAdmin):
     readonly_fields = ('created',)
     list_display = ['title', 'location', 'created', 'enabled']
+
+
+class HelpAdmin(admin.ModelAdmin):
+    readonly_fields = ('created',)
+    list_display = ['title', 'user', 'created']
+
+admin.site.register(Help, HelpAdmin)
 
 admin.site.register(Screen, ScreenAdmin)
 
